@@ -1,621 +1,282 @@
 <!DOCTYPE html>
-<html lang="es" class="scroll-smooth">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Menú La Positiva Cardona</title>
+    <title>Menú La Positiva Cardona</title>
+    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <!-- Google Fonts: Cinzel (Serif), Great Vibes (Caligráfica Script) & Plus Jakarta Sans -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;800;900&family=Great+Vibes&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        gold: {
-                            100: '#FAF2D3',
-                            200: '#F1E1A6',
-                            300: '#E5CD78',
-                            400: '#D4AF37', // Dorado principal
-                            500: '#B8860B',
-                            600: '#8A6300',
-                        },
-                        darkMatt: {
-                            950: '#050505',
-                            900: '#0A0A0B',
-                            850: '#121214',
-                            800: '#1B1B1E',
-                            700: '#2A2A2E'
-                        }
-                    },
-                    fontFamily: {
-                        serif: ['Cinzel', 'serif'],
-                        script: ['Great Vibes', 'cursive'],
-                        sans: ['Plus Jakarta Sans', 'sans-serif']
-                    }
-                }
-            }
-        }
-    </script>
     <style>
-        body { 
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            background-color: #0A0A0B;
-            color: #F8F9FA;
-        }
-        .font-serif-title { font-family: 'Cinzel', serif; }
-        .font-script-logo { font-family: 'Great Vibes', cursive; }
-        .hide-scrollbar::-webkit-scrollbar { display: none; }
-        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
-
-        /* Metallic Gold Gradient Text */
-        .gold-gradient-text {
-            background: linear-gradient(135deg, #FFE89C 0%, #D4AF37 50%, #9A7410 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        /* Gold Card Glow */
-        .gold-border-glow {
-            border: 1px solid rgba(212, 175, 55, 0.25);
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
-        }
-        .gold-border-glow:hover {
-            border-color: rgba(212, 175, 55, 0.6);
-            box-shadow: 0 0 20px rgba(212, 175, 55, 0.15);
-        }
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
     </style>
 </head>
-<body class="bg-darkMatt-900 text-stone-100 min-h-screen flex flex-col justify-between selection:bg-gold-400 selection:text-black">
+<body class="bg-slate-950 text-slate-100 min-h-screen flex flex-col selection:bg-amber-500 selection:text-slate-950">
 
-    <!-- HEADER DE LA NAVEGACIÓN -->
-    <header class="bg-darkMatt-950/95 border-b border-gold-400/20 sticky top-0 z-40 shadow-2xl backdrop-blur-md">
-        <div class="max-w-4xl mx-auto px-4 py-3 flex justify-between items-center">
-            
-           <!-- LOGO REAL DESDE EL ARCHIVO logo.png -->
+    <!-- Header Principal -->
+    <header class="sticky top-0 z-40 bg-slate-900/95 backdrop-blur border-b border-amber-500/20 shadow-lg">
+        <div class="max-w-4xl mx-auto px-4 py-3 flex items-center justify-between">
             <div class="flex items-center space-x-3 cursor-pointer" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
                 <div class="h-12 flex items-center justify-center">
                     <img src="logo.png" alt="Logo La Positiva" class="h-10 w-auto object-contain">
                 </div>
-
-            <!-- CONTROLES SUPERIORES -->
-            <div class="flex items-center gap-2">
-                <!-- Configuración de Teléfono de Pruebas -->
-                <button onclick="togglePhoneModal()" class="px-2.5 py-1.5 text-stone-300 bg-darkMatt-850 hover:bg-darkMatt-800 border border-gold-400/20 rounded-xl transition text-xs flex items-center gap-1.5" title="Cambiar número de WhatsApp de destino">
-                    <i class="fa-brands fa-whatsapp text-emerald-400 text-sm"></i>
-                    <span class="font-mono text-[11px] hidden sm:inline" id="currentPhoneDisplay">+598 99 263 100</span>
-                    <i class="fa-solid fa-gear text-[10px] text-gold-400 ml-0.5"></i>
-                </button>
-
-                <!-- Botón de Carrito -->
-                <button onclick="toggleCartModal()" class="relative bg-gradient-to-r from-gold-400 via-gold-300 to-gold-500 hover:brightness-110 active:scale-95 text-black px-3.5 py-2 rounded-xl font-bold text-xs sm:text-sm flex items-center space-x-2 transition shadow-[0_0_15px_rgba(212,175,55,0.25)]">
-                    <i class="fa-solid fa-bag-shopping"></i>
-                    <span class="hidden sm:inline">Pedido</span>
-                    <span id="cart-counter" class="bg-black text-gold-300 text-xs px-2 py-0.5 rounded-full font-bold border border-gold-400/30">0</span>
-                </button>
+                <div>
+                    <h2 class="font-bold text-sm text-amber-400 tracking-wide">LA POSITIVA</h2>
+                    <p class="text-[10px] text-slate-400 font-light">Fructuoso Rivera y Bvar. Artigas — Cardona</p>
+                </div>
             </div>
+            <!-- Botón del Carrito -->
+            <button onclick="toggleCart()" class="relative bg-amber-500 hover:bg-amber-400 text-slate-950 px-4 py-2.5 rounded-xl font-bold flex items-center gap-2 transition shadow-md">
+                <i class="fa-solid fa-cart-shopping"></i>
+                <span id="cart-count" class="bg-slate-950 text-amber-400 text-xs px-2 py-0.5 rounded-full font-extrabold">0</span>
+            </button>
         </div>
     </header>
 
-    <!-- HERO SLOGAN SLIDER / EMBLEMA -->
-    <section class="relative bg-darkMatt-950 border-b border-gold-400/20 py-8 px-4 text-center overflow-hidden">
-        <div class="absolute inset-0 opacity-5 bg-[radial-gradient(#d4af37_1px,transparent_1px)] [background-size:16px_16px]"></div>
-        <div class="max-w-2xl mx-auto relative z-10 space-y-1">
-            <h3 class="font-serif-title text-xs sm:text-sm text-gold-200 tracking-widest uppercase">Los buenos</h3>
-            <h2 class="font-script-logo text-5xl sm:text-6xl gold-gradient-text my-[-6px]">Momentos</h2>
-            <h3 class="font-serif-title text-xs sm:text-sm text-gold-200 tracking-widest uppercase">Vuelven</h3>
-            <div class="w-20 h-[1px] bg-gradient-to-r from-transparent via-gold-400 to-transparent mx-auto mt-3"></div>
-            <p class="text-[11px] text-stone-400 tracking-wider pt-2 font-light">Fructuoso Rivera y Bvar. Artigas — Cardona, Soriano</p>
-        </div>
-    </section>
-
-    <!-- CONTENIDO PRINCIPAL -->
-    <main class="max-w-4xl mx-auto px-4 py-6 flex-grow w-full">
+    <!-- Contenido Principal -->
+    <main class="flex-grow max-w-4xl w-full mx-auto px-4 py-6">
         
-        <!-- BARRA DE ESTADO / HORARIOS -->
-        <div class="bg-darkMatt-850 border border-gold-400/20 rounded-2xl p-4 mb-6 shadow-xl flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3 text-xs sm:text-sm text-stone-300">
-            <div class="flex items-center space-x-3">
-                <div class="w-8 h-8 rounded-full bg-gold-400/10 border border-gold-400/30 flex items-center justify-center text-gold-400">
-                    <i class="fa-solid fa-clock text-xs"></i>
+        <!-- Estado de Horario y Cocina -->
+        <div class="bg-slate-900 border border-amber-500/30 rounded-2xl p-4 mb-6 flex flex-col sm:flex-row items-center justify-between gap-3">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-xl bg-amber-500/10 flex items-center justify-center text-amber-400 text-lg">
+                    <i class="fa-regular fa-clock"></i>
                 </div>
                 <div>
-                    <span class="font-serif-title font-semibold text-gold-200">Horarios de Atención:</span>
-                    <span class="text-stone-400 block sm:inline"> Martes a Domingo (11:00-15:00 / 20:00-00:00)</span>
+                    <h3 class="text-xs font-bold text-slate-400 uppercase">Horarios de Atención</h3>
+                    <p class="text-sm font-semibold text-slate-200">Martes a Domingo (11:00 - 15:00 / 20:00 - 00:00)</p>
                 </div>
             </div>
-            <div class="flex items-center space-x-2 text-emerald-400 bg-emerald-950/40 border border-emerald-500/30 px-3 py-1 rounded-full text-[11px] font-medium">
-                <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-                <span>Cocina Abierta</span>
+            <!-- Indicador Dinámico de Cocina -->
+            <div id="kitchen-status" class="px-3.5 py-1.5 rounded-full text-xs font-bold flex items-center gap-2 border">
+                <!-- Generado por JS -->
             </div>
         </div>
 
-        <!-- BOTONES DE CATEGORÍA -->
-        <div class="flex space-x-2 overflow-x-auto pb-3 mb-6 hide-scrollbar">
-            <button onclick="filterMenu('todos')" class="cat-btn bg-gradient-to-r from-gold-400 to-gold-500 text-black px-4 py-2 rounded-xl text-xs sm:text-sm font-bold whitespace-nowrap transition shadow-md">Todo el Menú</button>
-            <button onclick="filterMenu('platos')" class="cat-btn bg-darkMatt-850 text-stone-300 hover:text-gold-200 border border-gold-400/20 hover:border-gold-400/50 px-4 py-2 rounded-xl text-xs sm:text-sm font-medium whitespace-nowrap transition">Platos Principales</button>
-            <button onclick="filterMenu('minutas')" class="cat-btn bg-darkMatt-850 text-stone-300 hover:text-gold-200 border border-gold-400/20 hover:border-gold-400/50 px-4 py-2 rounded-xl text-xs sm:text-sm font-medium whitespace-nowrap transition">Chivitos & Minutas</button>
-            <button onclick="filterMenu('postres')" class="cat-btn bg-darkMatt-850 text-stone-300 hover:text-gold-200 border border-gold-400/20 hover:border-gold-400/50 px-4 py-2 rounded-xl text-xs sm:text-sm font-medium whitespace-nowrap transition">Postres Caseros</button>
+        <!-- Categorías del Menú -->
+        <div class="flex gap-2 overflow-x-auto pb-3 mb-6 no-scrollbar">
+            <button onclick="filterCategory('todos')" class="cat-btn bg-amber-500 text-slate-950 px-4 py-2 rounded-xl text-sm font-bold whitespace-nowrap transition shadow">Todo el Menú</button>
+            <button onclick="filterCategory('principales')" class="cat-btn bg-slate-900 text-slate-300 hover:bg-slate-800 px-4 py-2 rounded-xl text-sm font-semibold whitespace-nowrap transition border border-slate-800">Platos Principales</button>
+            <button onclick="filterCategory('minutas')" class="cat-btn bg-slate-900 text-slate-300 hover:bg-slate-800 px-4 py-2 rounded-xl text-sm font-semibold whitespace-nowrap transition border border-slate-800">Chivitos & Minutas</button>
+            <button onclick="filterCategory('postres')" class="cat-btn bg-slate-900 text-slate-300 hover:bg-slate-800 px-4 py-2 rounded-xl text-sm font-semibold whitespace-nowrap transition border border-slate-800">Postres Caseros</button>
         </div>
 
-        <!-- REJILLA DE PRODUCTOS -->
-        <div id="product-grid" class="grid grid-cols-1 sm:grid-cols-2 gap-5">
-            <!-- Cargado dinámicamente -->
+        <!-- Grilla de Productos -->
+        <div id="products-grid" class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <!-- Dinámico -->
         </div>
+
     </main>
 
-    <!-- PIE DE PÁGINA -->
-    <footer class="bg-darkMatt-950 border-t border-gold-400/20 py-8 text-center text-xs text-stone-500 mt-10">
-        <div class="max-w-md mx-auto px-4 space-y-3">
-            <h4 class="font-serif-title text-gold-400 font-bold tracking-widest text-sm">LA POSITIVA RESTAURANTE</h4>
-            <p class="text-stone-400 text-[11px]">Cardona, Soriano • Uruguay</p>
-            <p class="text-[10px] text-stone-600">Menú Digital interactivo integrado con WhatsApp API</p>
+    <!-- Modal del Carrito -->
+    <div id="cart-modal" class="fixed inset-0 z-50 bg-black/70 backdrop-blur-sm hidden flex items-end sm:items-center justify-center p-0 sm:p-4">
+        <div class="bg-slate-900 w-full max-w-lg rounded-t-3xl sm:rounded-2xl border border-amber-500/30 max-h-[90vh] flex flex-col overflow-hidden shadow-2xl">
+            <div class="p-4 border-b border-slate-800 flex items-center justify-between bg-slate-950/50">
+                <h3 class="font-bold text-lg text-amber-400 flex items-center gap-2">
+                    <i class="fa-solid fa-bag-shopping"></i> Tu Pedido
+                </h3>
+                <button onclick="toggleCart()" class="text-slate-400 hover:text-white p-2 text-lg"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            
+            <div id="cart-items" class="p-4 overflow-y-auto flex-grow divide-y divide-slate-800">
+                <!-- Carrito -->
+            </div>
+
+            <div class="p-4 bg-slate-950 border-t border-slate-800">
+                <div class="mb-3 space-y-2">
+                    <label class="block text-xs font-bold text-amber-400 uppercase tracking-wider">Datos de entrega:</label>
+                    <input type="text" id="client-name" placeholder="Tu Nombre y Apellido" class="w-full bg-slate-900 border border-slate-800 rounded-xl px-3 py-2 text-sm text-slate-100 focus:outline-none focus:border-amber-500">
+                    <input type="text" id="client-address" placeholder="Dirección de envío o referencia" class="w-full bg-slate-900 border border-slate-800 rounded-xl px-3 py-2 text-sm text-slate-100 focus:outline-none focus:border-amber-500">
+                </div>
+
+                <div class="flex justify-between items-center mb-4 text-base font-bold">
+                    <span class="text-slate-300">Total a Pagar:</span>
+                    <span id="cart-total" class="text-amber-400 text-xl">$0</span>
+                </div>
+
+                <button onclick="sendWhatsAppOrder()" class="w-full bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-3 rounded-xl transition flex items-center justify-center gap-2 shadow-lg">
+                    <i class="fa-brands fa-whatsapp text-xl"></i> Enviar Pedido por WhatsApp
+                </button>
+            </div>
         </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 border-t border-slate-800 py-6 text-center text-xs text-slate-500 mt-auto">
+        <p>LA POSITIVA RESTAURANTE</p>
+        <p class="mt-1 text-slate-400">Cardona, Soriano • Uruguay</p>
+        <p class="mt-2 text-amber-500/70 font-medium">Menú Digital interactivo integrado con WhatsApp API</p>
     </footer>
 
-    <!-- MODAL DE CONFIGURACIÓN DE TELÉFONO -->
-    <div id="phone-modal" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
-        <div class="bg-darkMatt-900 border border-gold-400/40 w-full max-w-sm rounded-2xl p-6 shadow-2xl relative">
-            <h3 class="font-serif-title text-lg font-bold text-gold-300 mb-2">Configurar Teléfono</h3>
-            <p class="text-xs text-stone-400 mb-4">Ingresa el número de WhatsApp donde el restaurante recibirá los pedidos (incluye prefijo de país sin signos):</p>
-            <input type="text" id="phone-input" placeholder="Ej: 59899263100" class="w-full bg-black border border-gold-400/30 rounded-xl px-4 py-2.5 text-sm font-mono text-white mb-4 focus:outline-none focus:border-gold-400">
-            <div class="flex gap-2">
-                <button onclick="savePhoneNumber()" class="w-full bg-gold-400 hover:bg-gold-500 text-black font-bold py-2 rounded-xl text-xs transition">Guardar</button>
-                <button onclick="togglePhoneModal()" class="w-full bg-darkMatt-800 text-stone-300 py-2 rounded-xl text-xs border border-stone-700">Cancelar</button>
-            </div>
-        </div>
-    </div>
-
-    <!-- MODAL DE DETALLES Y NOTAS DEL PRODUCTO -->
-    <div id="product-modal" class="fixed inset-0 bg-black/85 backdrop-blur-md z-50 hidden flex items-center justify-center p-4">
-        <div class="bg-darkMatt-900 border border-gold-400/40 w-full max-w-md rounded-3xl overflow-hidden shadow-2xl relative animate-in fade-in zoom-in duration-200">
-            <button onclick="closeProductModal()" class="absolute top-4 right-4 bg-black/80 hover:bg-darkMatt-800 text-gold-400 w-9 h-9 rounded-full flex items-center justify-center z-10 transition border border-gold-400/30">
-                <i class="fa-solid fa-xmark"></i>
-            </button>
-            <div id="modal-image-container" class="relative h-56 bg-darkMatt-800">
-                <img id="modal-img" src="" alt="Plato" class="w-full h-full object-cover">
-                <div class="absolute inset-0 bg-gradient-to-t from-darkMatt-900 via-transparent to-transparent"></div>
-            </div>
-            <div class="p-6">
-                <div class="flex justify-between items-start mb-2">
-                    <h3 id="modal-title" class="font-serif-title text-xl font-bold text-gold-200"></h3>
-                    <div class="text-2xl font-extrabold text-gold-400" id="modal-price"></div>
-                </div>
-                <p id="modal-desc" class="text-xs sm:text-sm text-stone-400 mb-5 leading-relaxed font-light"></p>
-                
-                <div class="mb-6">
-                    <label class="block text-[11px] font-semibold text-gold-300 uppercase tracking-wider mb-2">Anotaciones para la cocina (opcional):</label>
-                    <input type="text" id="modal-notes" placeholder="Ej: Poca sal, punto de carne jugoso, sin cebolla..." class="w-full bg-black border border-gold-400/30 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-gold-400 transition placeholder-stone-600">
-                </div>
-
-                <button onclick="addCurrentToCart()" class="w-full bg-gradient-to-r from-gold-400 via-gold-300 to-gold-500 hover:brightness-110 active:scale-95 text-black font-bold py-3.5 rounded-xl transition shadow-[0_0_20px_rgba(212,175,55,0.25)] flex items-center justify-center space-x-2">
-                    <i class="fa-solid fa-cart-plus"></i>
-                    <span>Agregar al Pedido</span>
-                </button>
-            </div>
-        </div>
-    </div>
-
-    <!-- MODAL DEL CARRITO DE COMPRAS -->
-    <div id="cart-modal" class="fixed inset-0 bg-black/85 backdrop-blur-md z-50 hidden flex items-end sm:items-center justify-center sm:p-4">
-        <div class="bg-darkMatt-900 border border-gold-400/30 w-full max-w-lg sm:rounded-3xl rounded-t-3xl overflow-hidden shadow-2xl flex flex-col max-h-[90vh]">
-            <!-- Header Cart -->
-            <div class="p-4 border-b border-gold-400/20 flex justify-between items-center bg-black/40">
-                <h2 class="font-serif-title font-bold text-lg text-gold-300 flex items-center space-x-2">
-                    <i class="fa-solid fa-bag-shopping text-gold-400"></i>
-                    <span>Tu Pedido</span>
-                </h2>
-                <button onclick="toggleCartModal()" class="text-stone-400 hover:text-gold-400 p-2">
-                    <i class="fa-solid fa-xmark text-lg"></i>
-                </button>
-            </div>
-
-            <!-- Items -->
-            <div id="cart-items-container" class="p-4 overflow-y-auto flex-grow divide-y divide-stone-800">
-                <!-- Javascript -->
-            </div>
-
-            <!-- Formulario & Checkout -->
-            <div class="p-5 bg-black border-t border-gold-400/20 space-y-4">
-                
-                <!-- Selector Modalidad -->
-                <div>
-                    <label class="block text-[11px] font-semibold text-gold-300 uppercase tracking-wider mb-2">Modalidad de Entrega:</label>
-                    <div class="grid grid-cols-3 gap-2">
-                        <button type="button" onclick="setDeliveryMode('delivery')" id="btn-mode-delivery" class="mode-btn bg-gradient-to-r from-gold-400 to-gold-500 text-black font-bold py-2 px-2 rounded-xl text-xs transition">🚴 Delivery</button>
-                        <button type="button" onclick="setDeliveryMode('takeaway')" id="btn-mode-takeaway" class="mode-btn bg-darkMatt-850 text-stone-300 font-medium py-2 px-2 rounded-xl text-xs border border-gold-400/20 transition">🏃 Retiro</button>
-                        <button type="button" onclick="setDeliveryMode('mesa')" id="btn-mode-mesa" class="mode-btn bg-darkMatt-850 text-stone-300 font-medium py-2 px-2 rounded-xl text-xs border border-gold-400/20 transition">🍽️ En Mesa</button>
-                    </div>
-                </div>
-
-                <!-- Campos del Cliente -->
-                <div id="delivery-fields" class="space-y-2.5">
-                    <input type="text" id="client-name" placeholder="Tu Nombre y Apellido *" class="w-full bg-darkMatt-850 border border-gold-400/30 rounded-xl px-3.5 py-2.5 text-sm text-white focus:outline-none focus:border-gold-400">
-                    <input type="tel" id="client-phone" placeholder="Tu Teléfono / WhatsApp (Ej: 099123456) *" class="w-full bg-darkMatt-850 border border-gold-400/30 rounded-xl px-3.5 py-2.5 text-sm text-white focus:outline-none focus:border-gold-400">
-                    
-                    <div class="flex gap-2">
-                        <input type="text" id="client-address" placeholder="Dirección exacta (Calle y Esquina) *" class="w-full bg-darkMatt-850 border border-gold-400/30 rounded-xl px-3.5 py-2.5 text-sm text-white focus:outline-none focus:border-gold-400">
-                        <button type="button" onclick="getCurrentLocation()" class="bg-darkMatt-800 hover:bg-gold-400 hover:text-black text-gold-400 border border-gold-400/30 px-3 rounded-xl text-xs font-semibold flex items-center justify-center space-x-1 whitespace-nowrap transition" title="Obtener Ubicación GPS para Google Maps">
-                            <i class="fa-solid fa-location-dot"></i>
-                            <span class="hidden sm:inline">GPS</span>
-                        </button>
-                    </div>
-                    <p id="location-status" class="text-[10px] text-stone-400 hidden"></p>
-                </div>
-
-                <!-- Total -->
-                <div class="pt-2 flex justify-between items-center text-base sm:text-lg font-bold border-t border-stone-900">
-                    <span class="text-stone-300 font-serif-title">Total a Pagar:</span>
-                    <span id="cart-total" class="text-gold-400 font-extrabold text-xl">$0</span>
-                </div>
-
-                <!-- Botón de Envío -->
-                <button onclick="sendToWhatsApp()" class="w-full bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-3.5 rounded-xl transition shadow-[0_0_15px_rgba(16,185,129,0.3)] flex items-center justify-center space-x-2">
-                    <i class="fa-brands fa-whatsapp text-xl"></i>
-                    <span>Enviar Pedido a WhatsApp</span>
-                </button>
-            </div>
-        </div>
-    </div>
-
-    <!-- LOGICA JAVASCRIPT -->
+    <!-- Script de Lógica -->
     <script>
-        // Número de pruebas por defecto
-        let targetWhatsappNumber = "59899263100";
-
-        // Platos gastronómicos de La Positiva
         const products = [
-            { 
-                id: 1, 
-                name: "Chivito al Plato con Fritas", 
-                category: "minutas", 
-                price: 480, 
-                desc: "Clásico chivito oriental super abundante: lomo tierno, jamón, queso, huevo frito, panceta, panceta crocante y vegetales frescos con papas fritas.", 
-                image: "https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=600&q=80" 
-            },
-            { 
-                id: 2, 
-                name: "Milanesa Napolitana con Fritas", 
-                category: "platos", 
-                price: 520, 
-                desc: "Generosa milanesa cubierta con salsa de tomate de la casa, jamón cocido, muzarella gratinada y huevo frito con guarnición de papas.", 
-                image: "https://images.unsplash.com/photo-1625813506062-0aeb1d7a094b?auto=format&fit=crop&w=600&q=80" 
-            },
-            { 
-                id: 3, 
-                name: "Colita de Cuadril con Guarnición", 
-                category: "platos", 
-                price: 650, 
-                desc: "Corte jugoso de colita de cuadril a las brasas asado en su punto justo, acompañado con ensalada rusa o papas fritas.", 
-                image: "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=600&q=80" 
-            },
-            { 
-                id: 4, 
-                name: "Chajá Durazno / Frutilla", 
-                category: "postres", 
-                price: 220, 
-                desc: "El postre tradicional uruguayo más aclamado. Capas de merengue suave, crema batida, bizcochuelo y durazno o frutilla.", 
-                image: "https://images.unsplash.com/photo-1587314168485-3236d6710814?auto=format&fit=crop&w=600&q=80" 
-            },
-            { 
-                id: 5, 
-                name: "Flan Casero con Dulce de Leche", 
-                category: "postres", 
-                price: 180, 
-                desc: "Receta casera tradicional con caramelo artesanal y copón de dulce de leche uruguayo.", 
-                image: "https://images.unsplash.com/photo-1527661591475-527312dd65f5?auto=format&fit=crop&w=600&q=80" 
-            }
+            { id: 1, name: "Chivito al Plato con Fritas", category: "principales", price: 480, desc: "Clásico chivito oriental super abundante: lomo tierno, jamón, queso, huevo frito, panceta crocante y vegetales frescos con papas fritas.", image: "https://images.unsplash.com/photo-1550547660-d9450f859349?w=500&auto=format&fit=crop&q=60" },
+            { id: 2, name: "Milanesa Napolitana con Fritas", category: "principales", price: 520, desc: "Generosa milanesa cubierta con salsa de tomate de la casa, jamón cocido, muzarella gratinada y huevo frito con guarnición de papas.", image: "https://images.unsplash.com/photo-1626082927389-6cd097cdc6ec?w=500&auto=format&fit=crop&q=60" },
+            { id: 3, name: "Colita de Cuadril con Guarnición", category: "principales", price: 650, desc: "Corte jugoso de colita de cuadril a las brasas asado en su punto justo, acompañado con ensalada rusa o papas fritas.", image: "https://images.unsplash.com/photo-1544025162-d76694265947?w=500&auto=format&fit=crop&q=60" },
+            { id: 4, name: "Chajá Durazno / Frutilla", category: "postres", price: 220, desc: "El postre tradicional uruguayo más aclamado. Capas de merengue suave, crema batida, bizcochuelo y durazno o frutilla.", image: "https://images.unsplash.com/photo-1587314168485-3236d6710814?w=500&auto=format&fit=crop&q=60" },
+            { id: 5, name: "Flan Casero con Dulce de Leche", category: "postres", price: 180, desc: "Receta casera tradicional con caramelo artesanal y copón de dulce de leche uruguayo.", image: "https://images.unsplash.com/photo-1527515637462-cff94eecc1ac?w=500&auto=format&fit=crop&q=60" }
         ];
 
         let cart = [];
-        let activeCategory = 'todos';
-        let currentModalProduct = null;
-        let currentDeliveryMode = 'delivery';
-        let userGpsLocation = null;
 
-        // Renderizado del Menú
-        function renderMenu(category = 'todos') {
-            const grid = document.getElementById('product-grid');
-            grid.innerHTML = '';
-            
-            const filtered = category === 'todos' ? products : products.filter(p => p.category === category);
+        function checkKitchenStatus() {
+            const now = new Date();
+            const hours = now.getHours();
+            const minutes = now.getMinutes();
+            const currentTime = hours * 60 + minutes;
 
-            filtered.forEach(product => {
-                grid.innerHTML += `
-                    <div class="bg-darkMatt-850 border border-gold-400/20 rounded-2xl overflow-hidden group hover:border-gold-400/60 transition duration-300 flex flex-col justify-between shadow-lg">
-                        <div onclick="openProductModal(${product.id})" class="h-48 overflow-hidden relative cursor-pointer">
-                            <img src="${product.image}" alt="${product.name}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-                            <div class="absolute inset-0 bg-gradient-to-t from-darkMatt-850 via-transparent to-transparent opacity-80"></div>
-                            <span class="absolute bottom-3 right-3 bg-black/90 border border-gold-400/40 text-gold-300 font-extrabold px-3 py-1 rounded-full text-sm sm:text-base">$${product.price}</span>
-                        </div>
-                        <div class="p-4 flex flex-col flex-grow justify-between space-y-3">
-                            <div onclick="openProductModal(${product.id})" class="cursor-pointer">
-                                <h3 class="font-serif-title font-bold text-base text-gold-100 group-hover:text-gold-300 transition mb-1">${product.name}</h3>
-                                <p class="text-xs text-stone-400 line-clamp-2 leading-relaxed font-light">${product.desc}</p>
-                            </div>
-                            
-                            <!-- Botones de Acción -->
-                            <div class="flex items-center gap-2 pt-2 border-t border-stone-800/80">
-                                <button onclick="quickAddToCart(${product.id})" class="flex-grow bg-gradient-to-r from-gold-400 to-gold-500 hover:brightness-110 active:scale-95 text-black font-bold py-2 px-3 rounded-xl text-xs flex items-center justify-center space-x-1.5 transition shadow-md">
-                                    <i class="fa-solid fa-plus text-[10px]"></i>
-                                    <span>Pedir</span>
-                                </button>
-                                <button onclick="openProductModal(${product.id})" class="bg-darkMatt-800 hover:bg-darkMatt-700 text-stone-300 p-2 rounded-xl text-xs border border-gold-400/20 transition" title="Ver detalles o aclaraciones">
-                                    <i class="fa-solid fa-sliders text-gold-400"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                `;
-            });
-        }
+            // Turnos: 11:00 a 15:00 (660 a 900) y 20:00 a 00:00 (1200 a 1440)
+            const lunchOpen = currentTime >= 660 && currentTime <= 900;
+            const dinnerOpen = currentTime >= 1200 && currentTime <= 1440;
+            const isOpen = lunchOpen || dinnerOpen;
 
-        function filterMenu(cat) {
-            activeCategory = cat;
-            document.querySelectorAll('.cat-btn').forEach(btn => {
-                btn.className = "cat-btn bg-darkMatt-850 text-stone-300 hover:text-gold-200 border border-gold-400/20 hover:border-gold-400/50 px-4 py-2 rounded-xl text-xs sm:text-sm font-medium whitespace-nowrap transition";
-            });
-            event.target.className = "cat-btn bg-gradient-to-r from-gold-400 to-gold-500 text-black px-4 py-2 rounded-xl text-xs sm:text-sm font-bold whitespace-nowrap transition shadow-md";
-            renderMenu(cat);
-        }
-
-        // Agregar directo al carrito sin modal
-        function quickAddToCart(id) {
-            const product = products.find(p => p.id === id);
-            cart.push({
-                ...product,
-                notes: '',
-                cartId: Date.now() + Math.random()
-            });
-            updateCartCounter();
-            
-            // Animación feedback
-            const counter = document.getElementById('cart-counter');
-            counter.classList.add('scale-125');
-            setTimeout(() => counter.classList.remove('scale-125'), 200);
-        }
-
-        // Modal Detalle
-        function openProductModal(id) {
-            currentModalProduct = products.find(p => p.id === id);
-            document.getElementById('modal-img').src = currentModalProduct.image;
-            document.getElementById('modal-title').innerText = currentModalProduct.name;
-            document.getElementById('modal-desc').innerText = currentModalProduct.desc;
-            document.getElementById('modal-price').innerText = `$${currentModalProduct.price}`;
-            document.getElementById('modal-notes').value = '';
-            document.getElementById('product-modal').classList.remove('hidden');
-        }
-
-        function closeProductModal() {
-            document.getElementById('product-modal').classList.add('hidden');
-        }
-
-        function addCurrentToCart() {
-            const notes = document.getElementById('modal-notes').value.trim();
-            cart.push({
-                ...currentModalProduct,
-                notes,
-                cartId: Date.now() + Math.random()
-            });
-            updateCartCounter();
-            closeProductModal();
-        }
-
-        function updateCartCounter() {
-            document.getElementById('cart-counter').innerText = cart.length;
-        }
-
-        function toggleCartModal() {
-            const modal = document.getElementById('cart-modal');
-            modal.classList.toggle('hidden');
-            if(!modal.classList.contains('hidden')) {
-                renderCartItems();
+            const badge = document.getElementById('kitchen-status');
+            if (isOpen) {
+                badge.className = "px-3.5 py-1.5 rounded-full text-xs font-bold flex items-center gap-2 bg-emerald-500/10 text-emerald-400 border border-emerald-500/30";
+                badge.innerHTML = `<span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span> Cocina Abierta`;
+            } else {
+                badge.className = "px-3.5 py-1.5 rounded-full text-xs font-bold flex items-center gap-2 bg-rose-500/10 text-rose-400 border border-rose-500/30";
+                badge.innerHTML = `<span class="w-2 h-2 rounded-full bg-rose-500"></span> Cocina Cerrada`;
             }
         }
 
-        function renderCartItems() {
-            const container = document.getElementById('cart-items-container');
-            if(cart.length === 0) {
-                container.innerHTML = `<p class="text-center text-stone-500 py-8 text-xs sm:text-sm">Tu carrito está vacío. ¡Agregá tus platos preferidos!</p>`;
+        function renderProducts(cat) {
+            const grid = document.getElementById('products-grid');
+            const filtered = cat === 'todos' ? products : products.filter(p => p.category === cat);
+            
+            grid.innerHTML = filtered.map(p => `
+                <div class="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden shadow-lg flex flex-col justify-between hover:border-amber-500/40 transition">
+                    <div>
+                        <div class="h-44 overflow-hidden relative">
+                            <img src="${p.image}" alt="${p.name}" class="w-full h-full object-cover">
+                            <span class="absolute top-2 right-2 bg-slate-950/80 backdrop-blur text-amber-400 font-extrabold text-xs px-2.5 py-1 rounded-lg border border-amber-500/20">$${p.price}</span>
+                        </div>
+                        <div class="p-4">
+                            <h3 class="font-bold text-base text-slate-100">${p.name}</h3>
+                            <p class="text-xs text-slate-400 mt-1">${p.desc}</p>
+                            
+                            <!-- Bloque ampliado para detalles extras -->
+                            <div class="mt-3">
+                                <label class="block text-[11px] font-bold text-amber-400/90 uppercase mb-1">Detalles extras:</label>
+                                <input type="text" id="note-${p.id}" placeholder="Ej: Sin sal, salsa aparte, bien cocido..." class="w-full bg-slate-950 border border-slate-800 rounded-xl px-3 py-2 text-xs text-slate-200 focus:outline-none focus:border-amber-500">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Botón de pedir más acortado -->
+                    <div class="p-4 pt-0">
+                        <button onclick="addToCart(${p.id})" class="w-auto ml-auto bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold text-xs px-4 py-2 rounded-xl transition flex items-center justify-center gap-1.5 shadow">
+                            <i class="fa-solid fa-plus">+ Pedir</i>
+                        </button>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function filterCategory(cat) {
+            document.querySelectorAll('.cat-btn').forEach(btn => {
+                btn.className = "cat-btn bg-slate-900 text-slate-300 hover:bg-slate-800 px-4 py-2 rounded-xl text-sm font-semibold whitespace-nowrap transition border border-slate-800";
+            });
+            event.target.className = "cat-btn bg-amber-500 text-slate-950 px-4 py-2 rounded-xl text-sm font-bold whitespace-nowrap transition shadow";
+            renderProducts(cat);
+        }
+
+        function addToCart(id) {
+            const product = products.find(p => p.id === id);
+            const noteInput = document.getElementById(`note-${id}`);
+            const note = noteInput ? noteInput.value.trim() : '';
+            
+            const existing = cart.find(item => item.id === id && item.note === note);
+            if (existing) {
+                existing.qty++;
+            } else {
+                cart.push({ ...product, qty: 1, note: note });
+            }
+            if(noteInput) noteInput.value = '';
+            updateCartUI();
+        }
+
+        function updateCartUI() {
+            const totalCount = cart.reduce((sum, item) => sum + item.qty, 0);
+            document.getElementById('cart-count').innerText = totalCount;
+            
+            const container = document.getElementById('cart-items');
+            if (cart.length === 0) {
+                container.innerHTML = `<p class="text-center text-slate-500 py-8 text-sm">Tu carrito está vacío.</p>`;
                 document.getElementById('cart-total').innerText = '$0';
                 return;
             }
 
-            container.innerHTML = '';
-            let total = 0;
-
-            cart.forEach(item => {
-                total += item.price;
-                container.innerHTML += `
-                    <div class="py-3 flex justify-between items-center gap-3">
-                        <div class="flex-grow">
-                            <h4 class="font-serif-title font-bold text-xs sm:text-sm text-gold-100">${item.name}</h4>
-                            ${item.notes ? `<p class="text-[11px] text-amber-300/80 italic">Aclaración: ${item.notes}</p>` : ''}
-                            <span class="text-xs text-stone-400 font-semibold">$${item.price}</span>
-                        </div>
-                        <button onclick="removeFromCart(${item.cartId})" class="text-stone-500 hover:text-red-400 p-2 transition">
-                            <i class="fa-solid fa-trash-can text-sm"></i>
-                        </button>
+            container.innerHTML = cart.map((item, index) => `
+                <div class="py-3 flex items-center justify-between text-sm">
+                    <div class="flex-grow pr-2">
+                        <h4 class="font-bold text-slate-200">${item.name}</h4>
+                        ${item.note ? `<p class="text-[11px] text-amber-400 italic">Nota: ${item.note}</p>` : ''}
+                        <span class="text-xs text-slate-400">$${item.price} x ${item.qty}</span>
                     </div>
-                `;
-            });
+                    <div class="flex items-center gap-2">
+                        <button onclick="changeQty(${index}, -1)" class="w-7 h-7 bg-slate-800 hover:bg-slate-700 text-slate-300 rounded-lg font-bold flex items-center justify-center">-</button>
+                        <span class="text-xs font-bold w-4 text-center">${item.qty}</span>
+                        <button onclick="changeQty(${index}, 1)" class="w-7 h-7 bg-slate-800 hover:bg-slate-700 text-slate-300 rounded-lg font-bold flex items-center justify-center">+</button>
+                    </div>
+                </div>
+            `).join('');
 
-            document.getElementById('cart-total').innerText = `$${total}`;
+            const totalPrice = cart.reduce((sum, item) => sum + (item.price * item.qty), 0);
+            document.getElementById('cart-total').innerText = `$${totalPrice}`;
         }
 
-        function removeFromCart(cartId) {
-            cart = cart.filter(item => item.cartId !== cartId);
-            updateCartCounter();
-            renderCartItems();
+        function changeQty(index, delta) {
+            cart[index].qty += delta;
+            if (cart[index].qty <= 0) {
+                cart.splice(index, 1);
+            }
+            updateCartUI();
         }
 
-        function setDeliveryMode(mode) {
-            currentDeliveryMode = mode;
-            document.querySelectorAll('.mode-btn').forEach(btn => {
-                btn.className = "mode-btn bg-darkMatt-850 text-stone-300 font-medium py-2 px-2 rounded-xl text-xs border border-gold-400/20 transition";
-            });
+        function toggleCart() {
+            document.getElementById('cart-modal').classList.toggle('hidden');
+        }
+
+        function sendWhatsAppOrder() {
+            if (cart.length === 0) {
+                alert("Agregá al menos un producto a tu pedido.");
+                return;
+            }
+            const name = document.getElementById('client-name').value.trim();
+            const address = document.getElementById('client-address').value.trim();
+
+            if (!name || !address) {
+                alert("Por favor completá tu nombre y dirección de envío.");
+                return;
+            }
+
+            let message = `*¡NUEVO PEDIDO - LA POSITIVA!*\n\n`;
+            message += `👤 *Cliente:* ${name}\n`;
+            message += `📍 *Dirección:* ${address}\n\n`;
+            message += `🛒 *Detalle del pedido:*\n`;
             
-            const selectedBtn = document.getElementById(`btn-mode-${mode}`);
-            if(selectedBtn) {
-                selectedBtn.className = "mode-btn bg-gradient-to-r from-gold-400 to-gold-500 text-black font-bold py-2 px-2 rounded-xl text-xs transition";
-            }
-
-            const fields = document.getElementById('delivery-fields');
-            if(mode === 'delivery') {
-                fields.innerHTML = `
-                    <input type="text" id="client-name" placeholder="Tu Nombre y Apellido *" class="w-full bg-darkMatt-850 border border-gold-400/30 rounded-xl px-3.5 py-2.5 text-sm text-white focus:outline-none focus:border-gold-400">
-                    <input type="tel" id="client-phone" placeholder="Tu Teléfono / WhatsApp (Ej: 099123456) *" class="w-full bg-darkMatt-850 border border-gold-400/30 rounded-xl px-3.5 py-2.5 text-sm text-white focus:outline-none focus:border-gold-400">
-                    <div class="flex gap-2">
-                        <input type="text" id="client-address" placeholder="Dirección exacta (Calle y Esquina) *" class="w-full bg-darkMatt-850 border border-gold-400/30 rounded-xl px-3.5 py-2.5 text-sm text-white focus:outline-none focus:border-gold-400">
-                        <button type="button" onclick="getCurrentLocation()" class="bg-darkMatt-800 hover:bg-gold-400 hover:text-black text-gold-400 border border-gold-400/30 px-3 rounded-xl text-xs font-semibold flex items-center justify-center space-x-1 whitespace-nowrap transition" title="Obtener Ubicación GPS para Google Maps">
-                            <i class="fa-solid fa-location-dot"></i>
-                            <span class="hidden sm:inline">GPS</span>
-                        </button>
-                    </div>
-                    <p id="location-status" class="text-[10px] text-stone-400 hidden"></p>
-                `;
-            } else if(mode === 'takeaway') {
-                fields.innerHTML = `
-                    <input type="text" id="client-name" placeholder="Tu Nombre y Apellido *" class="w-full bg-darkMatt-850 border border-gold-400/30 rounded-xl px-3.5 py-2.5 text-sm text-white focus:outline-none focus:border-gold-400">
-                    <input type="tel" id="client-phone" placeholder="Tu Teléfono / WhatsApp (Ej: 099123456) *" class="w-full bg-darkMatt-850 border border-gold-400/30 rounded-xl px-3.5 py-2.5 text-sm text-white focus:outline-none focus:border-gold-400">
-                    <input type="text" id="client-time" placeholder="Hora estimada de retiro (Ej. 21:30 hs)" class="w-full bg-darkMatt-850 border border-gold-400/30 rounded-xl px-3.5 py-2.5 text-sm text-white focus:outline-none focus:border-gold-400">
-                `;
-            } else {
-                fields.innerHTML = `
-                    <input type="text" id="client-name" placeholder="Tu Nombre y Apellido *" class="w-full bg-darkMatt-850 border border-gold-400/30 rounded-xl px-3.5 py-2.5 text-sm text-white focus:outline-none focus:border-gold-400">
-                    <input type="tel" id="client-phone" placeholder="Tu Teléfono / WhatsApp (Ej: 099123456) *" class="w-full bg-darkMatt-850 border border-gold-400/30 rounded-xl px-3.5 py-2.5 text-sm text-white focus:outline-none focus:border-gold-400">
-                    <input type="text" id="client-table" placeholder="Número de Mesa *" class="w-full bg-darkMatt-850 border border-gold-400/30 rounded-xl px-3.5 py-2.5 text-sm text-white focus:outline-none focus:border-gold-400">
-                `;
-            }
-        }
-
-        // Obtener Ubicación GPS de Google Maps
-        function getCurrentLocation() {
-            const statusText = document.getElementById('location-status');
-            const addressInput = document.getElementById('client-address');
-            statusText.classList.remove('hidden');
-
-            if (!navigator.geolocation) {
-                statusText.innerText = "La geolocalización no es soportada por tu navegador.";
-                statusText.className = "text-[10px] text-red-400";
-                return;
-            }
-
-            statusText.innerText = "Obteniendo ubicación GPS...";
-            statusText.className = "text-[10px] text-gold-300 animate-pulse";
-
-            navigator.geolocation.getCurrentPosition(
-                (position) => {
-                    const lat = position.coords.latitude;
-                    const lng = position.coords.longitude;
-                    userGpsLocation = `https://maps.google.com/?q=${lat},${lng}`;
-                    
-                    if (addressInput) {
-                        if (!addressInput.value) {
-                            addressInput.value = "Ubicación GPS agregada";
-                        }
-                    }
-                    statusText.innerText = "✓ Ubicación GPS detectada correctamente";
-                    statusText.className = "text-[10px] text-emerald-400 font-semibold";
-                },
-                (error) => {
-                    statusText.innerText = "No se pudo obtener la ubicación automáticamente. Por favor ingrésala manualmente.";
-                    statusText.className = "text-[10px] text-amber-400";
-                },
-                { enableHighAccuracy: true, timeout: 10000 }
-            );
-        }
-
-        // Modales de Configuración
-        function togglePhoneModal() {
-            const modal = document.getElementById('phone-modal');
-            modal.classList.toggle('hidden');
-            if (!modal.classList.contains('hidden')) {
-                document.getElementById('phone-input').value = targetWhatsappNumber;
-            }
-        }
-
-        function savePhoneNumber() {
-            const val = document.getElementById('phone-input').value.trim();
-            if (val) {
-                targetWhatsappNumber = val.replace(/[^0-9]/g, '');
-                document.getElementById('currentPhoneDisplay').innerText = `+${targetWhatsappNumber}`;
-                togglePhoneModal();
-            }
-        }
-
-        // Envío a WhatsApp
-        function sendToWhatsApp() {
-            const name = document.getElementById('client-name')?.value.trim();
-            const phone = document.getElementById('client-phone')?.value.trim();
-
-            if(!name) {
-                alert("Por favor, ingresá tu Nombre y Apellido.");
-                return;
-            }
-            if(!phone) {
-                alert("Por favor, ingresá tu Teléfono o WhatsApp de contacto.");
-                return;
-            }
-            if(cart.length === 0) {
-                alert("El carrito está vacío. Seleccioná platos antes de enviar.");
-                return;
-            }
-
-            let modeText = "";
-            let extraInfo = "";
-
-            if(currentDeliveryMode === 'delivery') {
-                const address = document.getElementById('client-address')?.value.trim();
-                if(!address) { alert("Por favor ingresá tu dirección para el Delivery."); return; }
-                modeText = "🚴 DELIVERY";
-                extraInfo = `📍 Dirección: ${address}`;
-                if (userGpsLocation) {
-                    extraInfo += `\n🗺️ Mapa GPS: ${userGpsLocation}`;
-                }
-            } else if(currentDeliveryMode === 'takeaway') {
-                const time = document.getElementById('client-time')?.value.trim();
-                modeText = "🏃 RETIRO EN LOCAL (TAKE AWAY)";
-                extraInfo = `⏰ Hora estimada: ${time || 'Lo antes posible'}`;
-            } else {
-                const table = document.getElementById('client-table')?.value.trim();
-                if(!table) { alert("Por favor ingresá tu número de Mesa."); return; }
-                modeText = "🍽️ EN MESA";
-                extraInfo = `🪑 Mesa N°: ${table}`;
-            }
-
-            let total = 0;
-            let itemsText = "";
-            cart.forEach((item) => {
-                total += item.price;
-                itemsText += `\n• *${item.name}* ($${item.price})`;
-                if(item.notes) itemsText += `\n   └ _Nota: ${item.notes}_`;
+            cart.forEach(item => {
+                message += `• ${item.qty}x ${item.name} ($${item.price * item.qty})`;
+                if(item.note) message += ` _(Nota: ${item.note})_`;
+                message += `\n`;
             });
 
-            const message = `*¡NUEVO PEDIDO - LA POSITIVA!* 🍽️\n` +
-                            `----------------------------------\n` +
-                            `👤 *Cliente:* ${name}\n` +
-                            `📱 *Teléfono:* ${phone}\n` +
-                            `📦 *Modalidad:* ${modeText}\n` +
-                            `${extraInfo}\n` +
-                            `----------------------------------\n` +
-                            `🛒 *DETALLE DEL PEDIDO:*` +
-                            `${itemsText}\n\n` +
-                            `----------------------------------\n` +
-                            `💰 *TOTAL A PAGAR: $${total}*`;
+            const totalPrice = cart.reduce((sum, item) => sum + (item.price * item.qty), 0);
+            message += `\n💰 *Total a abonar:* $${totalPrice}`;
 
-            const encodedURL = `https://api.whatsapp.com/send?phone=${targetWhatsappNumber}&text=${encodeURIComponent(message)}`;
-            window.open(encodedURL, '_blank');
+            const phone = "59899263100";
+            const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+            window.open(url, '_blank');
         }
 
-        // Inicialización al cargar la página
-        window.onload = function() {
-            renderMenu('todos');
-        };
+        // Inicializar
+        checkKitchenStatus();
+        renderProducts('todos');
     </script>
 </body>
 </html>
