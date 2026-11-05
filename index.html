@@ -77,45 +77,11 @@
     <header class="bg-darkMatt-950/95 border-b border-gold-400/20 sticky top-0 z-40 shadow-2xl backdrop-blur-md">
         <div class="max-w-4xl mx-auto px-4 py-3 flex justify-between items-center">
             
-            <!-- LOGO OFICIAL SVG EXACTO -->
+           <!-- LOGO REAL DESDE EL ARCHIVO logo.png -->
             <div class="flex items-center space-x-3 cursor-pointer" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
-                <div class="w-12 h-12 rounded-full bg-darkMatt-950 border border-gold-400/70 p-1 flex items-center justify-center shadow-[0_0_15px_rgba(212,175,55,0.2)]">
-                    <svg viewBox="0 0 200 200" class="w-full h-full text-gold-400 fill-current">
-                        <!-- Circulo exterior unico limpio -->
-                        <circle cx="100" cy="100" r="92" fill="none" stroke="currentColor" stroke-width="2.5"/>
-                        
-                        <!-- Gorro de Cocinero Chef -->
-                        <path d="M82 62 C80 54, 88 46, 96 48 C100 45, 108 45, 112 48 C120 46, 128 54, 126 62 C131 66, 130 74, 124 77 C122 78, 86 78, 84 77 C78 74, 77 66, 82 62 Z" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
-                        <path d="M86 78 L122 78 L120 84 L88 84 Z" fill="currentColor"/>
-
-                        <!-- Texto "La" -->
-                        <text x="100" y="97" font-family="'Great Vibes', cursive" font-size="28" text-anchor="middle" fill="#FAF2D3">La</text>
-                        
-                        <!-- Texto Principal "Positiva" -->
-                        <text x="100" y="124" font-family="'Great Vibes', cursive" font-size="40" font-weight="bold" text-anchor="middle" fill="#FAF2D3">Positiva</text>
-
-                        <!-- Lineas horizontales laterales para "RESTAURANTE" -->
-                        <line x1="38" y1="138" x2="62" y2="138" stroke="currentColor" stroke-width="1.5"/>
-                        <text x="100" y="141" font-family="'Cinzel', serif" font-size="9" font-weight="700" text-anchor="middle" letter-spacing="2">RESTAURANTE</text>
-                        <line x1="138" y1="138" x2="162" y2="138" stroke="currentColor" stroke-width="1.5"/>
-
-                        <!-- Subtexto CARDONA -->
-                        <text x="100" y="152" font-family="'Cinzel', serif" font-size="8" font-weight="600" text-anchor="middle" letter-spacing="2.5" fill="#E5CD78">CARDONA</text>
-
-                        <!-- Cubiertos Cruzados Bottom (Cuchillo y Tenedor) -->
-                        <g transform="translate(100, 172) scale(0.55)">
-                            <!-- Tenedor -->
-                            <path d="M-15 -18 L-15 -8 C-15 -3 -10 0 -5 0 L-5 22 L-2 22 L-2 0 C3 0 8 -3 8 -8 L8 -18 L6 -18 L6 -9 C6 -5 3 -2 -1 -2 L-1 -18 L-3 -18 L-3 -2 C-7 -2 -10 -5 -10 -9 L-10 -18 Z" transform="rotate(-35)"/>
-                            <!-- Cuchillo -->
-                            <path d="M12 -18 C12 -18 18 -10 18 0 L15 0 L15 22 L12 22 L12 -18 Z" transform="rotate(35)"/>
-                        </g>
-                    </svg>
+                <div class="w-12 h-12 rounded-full bg-darkMatt-950 border border-gold-400/70 overflow-hidden flex items-center justify-center shadow-[0_0_15px_rgba(212,175,55,0.2)]">
+                    <img src="logo.png" alt="Logo La Positiva" class="w-full h-full object-cover">
                 </div>
-                <div>
-                    <h1 class="font-serif-title font-bold text-base sm:text-lg tracking-wider gold-gradient-text leading-tight">LA POSITIVA</h1>
-                    <p class="text-[10px] text-stone-400 font-light tracking-widest uppercase">Restaurante • Cardona</p>
-                </div>
-            </div>
 
             <!-- CONTROLES SUPERIORES -->
             <div class="flex items-center gap-2">
